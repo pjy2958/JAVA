@@ -7,7 +7,7 @@ public class AssignmentMain02 {
 		int beginSecond;	// 입력받은 초기 초
 		int hour;			// 변환한 시간
 		int minute; 		// 변환한 분
-		int second;			// 변환한 초
+		int second;			// 변환한 초 
 		
 		Scanner sc = new Scanner(System.in);
 		System.out.print("초를 입력하세요 : ");

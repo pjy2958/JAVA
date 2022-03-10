@@ -18,7 +18,7 @@ public class AssignmentMain10 {
 		num2 = sc.nextInt();
 		System.out.print("세번째 정수 : ");
 		num3 = sc.nextInt();
-		
+		 
 		if (num1 >= num2 && num1 >= num3) {			// num1이 최대값일때
 			max = num1;
 			if	(num2 >= num3) {

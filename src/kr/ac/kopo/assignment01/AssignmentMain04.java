@@ -6,7 +6,7 @@ public class AssignmentMain04 {
 	public static void main(String[] args) {
 		int num1; // 정수
 		int num2; // 나눌 수
-		
+		 
 		Scanner sc = new Scanner(System.in);
 		System.out.print("정수를 입력하세요 : ");
 		num1 = sc.nextInt();

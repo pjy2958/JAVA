@@ -16,7 +16,7 @@ public class AssignmentMain11 {
 		num2 = sc.nextInt();
 		num3 = sc.nextInt();
 		num4 = sc.nextInt();
-		
+		 
 		max = num1;
 		
 		if (num2 >= num1) {

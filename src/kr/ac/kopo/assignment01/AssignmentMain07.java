@@ -21,6 +21,6 @@ public class AssignmentMain07 {
 			System.out.printf("변경된 값 : %c", (int)alphabet - 32);
 		} else {
 			System.out.println("ERROR");
-		}
+		} 
 	}
 }

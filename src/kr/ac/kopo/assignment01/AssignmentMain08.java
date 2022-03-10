@@ -30,6 +30,6 @@ public class AssignmentMain08 {
 		changeMoney %= 50;
 		
 		System.out.printf("10원 : %d 개\n", changeMoney / 10);
-		changeMoney %= 10;
+		changeMoney %= 10; 
 	}
 }

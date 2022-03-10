@@ -19,5 +19,5 @@ public class AssignmentMain09 {
 		} else {
 			System.out.printf("%d books\n", bookNum);	// 책권수가 1권보다 많을 경우
 		}
-	}
+	} 
 }
