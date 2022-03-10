@@ -3,10 +3,10 @@ package kr.ac.kopo.day01;
 public class VariableMain02 {
 
 	public static void main(String[] args) {
-		// "Hello" ¹®ÀÚ¿­À» ÀúÀåÇÏ±â À§ÇÑ º¯¼ö str ¼±¾ğ
+		// "Hello" ë¬¸ìì—´ì„ ì €ì¥í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ str ì„ ì–¸
 		//String str;
 		//str = "Hellow";
-		//strÀÇ °æ¿ì Heap¿µ¿ªÀÇ ÁÖ¼Ò°ªÀ» ÀúÀåÇÏ°í ÀÖ´Ù. strÀÌ ÂüÁ¶º¯¼ö. StringÀº ÂüÁ¶ÀÚ·áÇü.
+		//strì˜ ê²½ìš° Heapì˜ì—­ì˜ ì£¼ì†Œê°’ì„ ì €ì¥í•˜ê³  ìˆë‹¤. strì´ ì°¸ì¡°ë³€ìˆ˜. Stringì€ ì°¸ì¡°ìë£Œí˜•.
 		String str = "Hello";
 		System.out.println(str);
 		

@@ -5,28 +5,28 @@ public class VariableMain03 {
 	public static void main(String[] args) {
 		int a;
 		byte b = 100;
-		// ±âº» ÀÚ·áÇü¿¡¼­ÀÇ Çüº¯È¯
-		// ´ëÀÔ¿¬»êÀÚ¸¦ ±âÁØÀ¸·Î ¾çÂÊÀÇ ÀÚ·áÇüÀÌ Çüº¯È¯ ¹ß»ý. -> 1. ¸í½ÃÀû(°­Á¦Àû)Çüº¯È¯ 2. ¹¬½ÃÀû Çüº¯È¯
-		// ¹¬½ÃÀû Çüº¯È¯ : ¹üÀ§°¡ ³ÐÀº µ¥ÀÌÅÍ Çü¿¡ Á¼Àº µ¥ÀÌÅÍ ÇüÀ» ´ëÀÔ -> ÀÚ·áÇü Å¸ÀÔÀ» »ý·«°¡´É
-		// ¸í½ÃÀû Çüº¯È¯ : ¹üÀ§°¡ Á¼Àº µ¥ÀÌÅÍ Çü¿¡ ³ÐÀº µ¥ÀÌÅÍ ÇüÀ» ´ëÀÔ -> ÀÚ·áÇü Å¸ÀÔÀ» »ý·«ºÒ°¡´É
-		a = b; // ¹¬½ÃÀûÇüº¯È¯ : int´Â 4byte, byte´Â 1byte¸¦ ÇÒ´çÇØ¼­ ¹®Á¦°¡ ¾øÀ½. a = (int)b; **¹¬½ÃÀû Çüº¯È¯Àº (int)»ý·«°¡´É.**
-		b = (byte)a; // ¸í½ÃÀûÇüº¯È¯ : (byte)»ý·« ºÒ°¡´É. ´ëÀÔÇÏ´Â º¯¼öÀÇ Å©±â°¡ ´ëÀÔµÇ´Â º¯¼öÀÇ Å©±âº¸´Ù Å©¸é ¾È‰Î.
+		// ê¸°ë³¸ ìžë£Œí˜•ì—ì„œì˜ í˜•ë³€í™˜
+		// ëŒ€ìž…ì—°ì‚°ìžë¥¼ ê¸°ì¤€ìœ¼ë¡œ ì–‘ìª½ì˜ ìžë£Œí˜•ì´ í˜•ë³€í™˜ ë°œìƒ. -> 1. ëª…ì‹œì (ê°•ì œì )í˜•ë³€í™˜ 2. ë¬µì‹œì  í˜•ë³€í™˜
+		// ë¬µì‹œì  í˜•ë³€í™˜ : ë²”ìœ„ê°€ ë„“ì€ ë°ì´í„° í˜•ì— ì¢ì€ ë°ì´í„° í˜•ì„ ëŒ€ìž… -> ìžë£Œí˜• íƒ€ìž…ì„ ìƒëžµê°€ëŠ¥
+		// ëª…ì‹œì  í˜•ë³€í™˜ : ë²”ìœ„ê°€ ì¢ì€ ë°ì´í„° í˜•ì— ë„“ì€ ë°ì´í„° í˜•ì„ ëŒ€ìž… -> ìžë£Œí˜• íƒ€ìž…ì„ ìƒëžµë¶ˆê°€ëŠ¥
+		a = b; // ë¬µì‹œì í˜•ë³€í™˜ : intëŠ” 4byte, byteëŠ” 1byteë¥¼ í• ë‹¹í•´ì„œ ë¬¸ì œê°€ ì—†ìŒ. a = (int)b; **ë¬µì‹œì  í˜•ë³€í™˜ì€ (int)ìƒëžµê°€ëŠ¥.**
+		b = (byte)a; // ëª…ì‹œì í˜•ë³€í™˜ : (byte)ìƒëžµ ë¶ˆê°€ëŠ¥. ëŒ€ìž…í•˜ëŠ” ë³€ìˆ˜ì˜ í¬ê¸°ê°€ ëŒ€ìž…ë˜ëŠ” ë³€ìˆ˜ì˜ í¬ê¸°ë³´ë‹¤ í¬ë©´ ì•ˆëŒ.
 		
-		System.out.println(10 + 20.0); // Å«ÂÊÀÇ ÀÚ·áÇü Å¸ÀÔ ÀÚµ¿À¸·Î µû¶ó°¨. -> ¹¬½ÃÀûÇüº¯È¯
-		System.out.println(10 + (int)20.0); // ÀÛÀºÂÊÀÇ ÀÚ·áÇü Å¸ÀÔÀ» Ãâ·ÂÇÏ°í ½ÍÀ¸¸é ¸í½ÃÀûÀ¸·Î Å¸ÀÔÀ» Àû¾î¾ßÇÔ -> ¸í½ÃÀû(°­Á¦Àû)Çüº¯È¯
+		System.out.println(10 + 20.0); // í°ìª½ì˜ ìžë£Œí˜• íƒ€ìž… ìžë™ìœ¼ë¡œ ë”°ë¼ê°. -> ë¬µì‹œì í˜•ë³€í™˜
+		System.out.println(10 + (int)20.0); // ìž‘ì€ìª½ì˜ ìžë£Œí˜• íƒ€ìž…ì„ ì¶œë ¥í•˜ê³  ì‹¶ìœ¼ë©´ ëª…ì‹œì ìœ¼ë¡œ íƒ€ìž…ì„ ì ì–´ì•¼í•¨ -> ëª…ì‹œì (ê°•ì œì )í˜•ë³€í™˜
 		
-		double d = 10 + 20.2; // ¹¬½ÃÀûÇüº¯È¯
-		int e = (int)(10 + 20.2); // ¸í½ÃÀûÇüº¯È¯
+		double d = 10 + 20.2; // ë¬µì‹œì í˜•ë³€í™˜
+		int e = (int)(10 + 20.2); // ëª…ì‹œì í˜•ë³€í™˜
 		
 		System.out.println(d);
 		System.out.println(e);
 		
-		// »ó¼ö´Â finalÀ» ºÙÀÎ´Ù.
+		// ìƒìˆ˜ëŠ” finalì„ ë¶™ì¸ë‹¤.
 		final int NUM = 100;
 		System.out.println("num : " + NUM);
-		//NUM = 20; finalÀÌ ºÙÀº¼ø°£ º¯°æºÒ°¡´É -> ¿À·ùÃâ·Â
+		//NUM = 20; finalì´ ë¶™ì€ìˆœê°„ ë³€ê²½ë¶ˆê°€ëŠ¥ -> ì˜¤ë¥˜ì¶œë ¥
 		
-		//ÀÌ½ºÄÉÀÌÇÁ¹®ÀÚ
+		//ì´ìŠ¤ì¼€ì´í”„ë¬¸ìž
 		char ch = '\'';
 		char ch1 = '\"';
 		char ch2 = '\\';

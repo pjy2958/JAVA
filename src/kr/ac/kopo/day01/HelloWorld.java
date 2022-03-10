@@ -2,9 +2,9 @@ package kr.ac.kopo.day01;
 
 public class HelloWorld {
 	public static void main(String[] args) {
-		// println ¸Þ¼ÒµåÀÇ ±â´É : Á¤¼ö, ½Ç¼ö.0000, '¹®ÀÚ', "¹®ÀÚ¿­", ³í¸®°ª Ãâ·Â / ÀÚ¹ÙÀÇ °æ¿ì ³í¸®°ªÀº true or false -> ¼ýÀÚ 1,0À¸·Î ±¸ºÐÇÏÁö¾ÊÀ½
+		// println ë©”ì†Œë“œì˜ ê¸°ëŠ¥ : ì •ìˆ˜, ì‹¤ìˆ˜.0000, 'ë¬¸ìž', "ë¬¸ìžì—´", ë…¼ë¦¬ê°’ ì¶œë ¥ / ìžë°”ì˜ ê²½ìš° ë…¼ë¦¬ê°’ì€ true or false -> ìˆ«ìž 1,0ìœ¼ë¡œ êµ¬ë¶„í•˜ì§€ì•ŠìŒ
 		System.out.println("Hello World");
 	}
 }
 
-// aaa() : ¸Þ¼Òµå ->  °ýÈ£°¡ºÙÀ¸¸é ¸Þ¼Òµå¶ó ºÎ¸¥´Ù. 
+// aaa() : ë©”ì†Œë“œ ->  ê´„í˜¸ê°€ë¶™ìœ¼ë©´ ë©”ì†Œë“œë¼ ë¶€ë¥¸ë‹¤. 

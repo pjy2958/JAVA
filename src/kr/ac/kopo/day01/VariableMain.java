@@ -1,40 +1,40 @@
 package kr.ac.kopo.day01;
 
 /*
- 		±âº»ÀÚ·áÇü
- 		³í¸®Çü : boolean
- 		¹®ÀÚÇü : char
- 		Á¤¼öÇü : byte, short, int(±âº»), long
- 		½Ç¼öÇü : float, double(±âº»)
+ 		ê¸°ë³¸ìžë£Œí˜•
+ 		ë…¼ë¦¬í˜• : boolean
+ 		ë¬¸ìží˜• : char
+ 		ì •ìˆ˜í˜• : byte, short, int(ê¸°ë³¸), long
+ 		ì‹¤ìˆ˜í˜• : float, double(ê¸°ë³¸)
  		
- 		º¯¼ö ¼±¾ð :
- 		ÀÚ·áÇü º¯¼ö¸í;
+ 		ë³€ìˆ˜ ì„ ì–¸ :
+ 		ìžë£Œí˜• ë³€ìˆ˜ëª…;
  		
- 		º¯¼ö ´ëÀÔ :
- 		º¯¼ö¸í = °ª;
+ 		ë³€ìˆ˜ ëŒ€ìž… :
+ 		ë³€ìˆ˜ëª… = ê°’;
  		
- 		º¯¼ö ÃÊ±âÈ­(¼±¾ð°ú µ¿½Ã¿¡ °ª ´ëÀÔ) :
- 		ÀÚ·áÇü º¯¼ö¸í = °ª;
+ 		ë³€ìˆ˜ ì´ˆê¸°í™”(ì„ ì–¸ê³¼ ë™ì‹œì— ê°’ ëŒ€ìž…) :
+ 		ìžë£Œí˜• ë³€ìˆ˜ëª… = ê°’;
  		
- 		°°Àº ÀÚ·áÇüÀÇ º¯¼ö ¿©·¯°³ ¼±¾ð
- 		ÀÚ·áÇü º¯¼ö¸í1, º¯¼ö¸í2, º¯¼ö¸í3, ...;
+ 		ê°™ì€ ìžë£Œí˜•ì˜ ë³€ìˆ˜ ì—¬ëŸ¬ê°œ ì„ ì–¸
+ 		ìžë£Œí˜• ë³€ìˆ˜ëª…1, ë³€ìˆ˜ëª…2, ë³€ìˆ˜ëª…3, ...;
  */
 
 public class VariableMain {
 	
-	char b; // ¸â¹öº¯¼ö -> ÀÚµ¿ÃÊ±âÈ­ O
+	char b; // ë©¤ë²„ë³€ìˆ˜ -> ìžë™ì´ˆê¸°í™” O
 	
 	public static void main(String[] args) {
-		// ´ë¹®ÀÚ A¸¦ ÀúÀåÇÏ±â À§ÇÑ º¯¼ö a ¼±¾ð
-		// º¯¼ö´Â ºí·Ï´ÜÀ§·Î »ý¼ºµÇ°í »èÁ¦µÊ ( { } )
-		// ¸Þ¼Òµå¾ÈÀÇ º¯¼ö´Â Áö¿ªº¯¼ö·Î ¼±¾ð½Ã ÀÚµ¿ ÃÊ±âÈ­°¡ µÇÁö¾ÊÀ½.
-		char a; 	// Áö¿ªº¯¼ö -> ¼±¾ð½Ã ÀÚµ¿ÃÊ±âÈ­ X -> ¸Þ¸ð¸®ÀÇ ½ºÅÃ¿µ¿ª¿¡ °ø°£À» ÇÒ´çÇÏ°í ÃÊ±âÁÖ¼Ò¸¦ ÀúÀå.
+		// ëŒ€ë¬¸ìž Aë¥¼ ì €ìž¥í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ a ì„ ì–¸
+		// ë³€ìˆ˜ëŠ” ë¸”ë¡ë‹¨ìœ„ë¡œ ìƒì„±ë˜ê³  ì‚­ì œë¨ ( { } )
+		// ë©”ì†Œë“œì•ˆì˜ ë³€ìˆ˜ëŠ” ì§€ì—­ë³€ìˆ˜ë¡œ ì„ ì–¸ì‹œ ìžë™ ì´ˆê¸°í™”ê°€ ë˜ì§€ì•ŠìŒ.
+		char a; 	// ì§€ì—­ë³€ìˆ˜ -> ì„ ì–¸ì‹œ ìžë™ì´ˆê¸°í™” X -> ë©”ëª¨ë¦¬ì˜ ìŠ¤íƒì˜ì—­ì— ê³µê°„ì„ í• ë‹¹í•˜ê³  ì´ˆê¸°ì£¼ì†Œë¥¼ ì €ìž¥.
 		a = 'A';	
 		
-		// Á¤¼ö 123À» ÀúÀåÇÏ±â À§ÇÑ º¯¼ö c ¼±¾ð ¹× º¯¼ö ÃÊ±âÈ­
+		// ì •ìˆ˜ 123ì„ ì €ìž¥í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ c ì„ ì–¸ ë° ë³€ìˆ˜ ì´ˆê¸°í™”
 		int c = 123;
 		
-		//½Ç¼ö 3°³¸¦ ÀúÀåÇÏ±â À§ÇÑ º¯¼ö d1, d2, d3 ¼±¾ð
+		//ì‹¤ìˆ˜ 3ê°œë¥¼ ì €ìž¥í•˜ê¸° ìœ„í•œ ë³€ìˆ˜ d1, d2, d3 ì„ ì–¸
 		double d2, d3, d1 = 12.34;
 		
 		System.out.println(a);

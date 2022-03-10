@@ -6,23 +6,23 @@ public class ScannerMain {
 	public static void main(String[] args) {
 		Scanner sc = new Scanner(System.in);
 		
-		// ÇÏ³ªÀÇ ¹®ÀÚÀÔ·Â¹Ş±â ¹ØÀÇ ¿¹½ÃÀÇ °æ¿ì Ã¹¹®ÀÚ¸¦ ¹ŞÀ½
-		System.out.println("¹®ÀÚ¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		// í•˜ë‚˜ì˜ ë¬¸ìì…ë ¥ë°›ê¸° ë°‘ì˜ ì˜ˆì‹œì˜ ê²½ìš° ì²«ë¬¸ìë¥¼ ë°›ìŒ
+		System.out.println("ë¬¸ìë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		char ch = sc.nextLine().charAt(0);
 		System.out.println(ch);
 		
-		// Á¤¼ö ÀÔ·Â¹Ş±â
-		System.out.print("Á¤¼ö¸¦ ÀÔ·ÂÇÏ¼¼¿ä : ");
+		// ì •ìˆ˜ ì…ë ¥ë°›ê¸°
+		System.out.print("ì •ìˆ˜ë¥¼ ì…ë ¥í•˜ì„¸ìš” : ");
 		int num = sc.nextInt();
 		System.out.println("a = " + num);
 		
-		// ´Ü¾î ÀÔ·Â¹Ş±â
-		System.out.print("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä : ");
-		String word = sc.next(); // ¶ç¾î¾²±â ±âÁØÀ¸·Î ´Ü¾îÇÏ³ª¸¸ µé¾î°¨.
+		// ë‹¨ì–´ ì…ë ¥ë°›ê¸°
+		System.out.print("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
+		String word = sc.next(); // ë„ì–´ì“°ê¸° ê¸°ì¤€ìœ¼ë¡œ ë‹¨ì–´í•˜ë‚˜ë§Œ ë“¤ì–´ê°.
 		System.out.println(word);
 		
-		// ¹®ÀÚ¿­ ÀÔ·Â¹Ş±â
-		System.out.print("¹®ÀÚ¿­À» ÀÔ·ÂÇÏ¼¼¿ä : ");
+		// ë¬¸ìì—´ ì…ë ¥ë°›ê¸°
+		System.out.print("ë¬¸ìì—´ì„ ì…ë ¥í•˜ì„¸ìš” : ");
 		String str = sc.nextLine();
 		System.out.println(str);
 	}

@@ -1,20 +1,20 @@
 package kr.ac.kopo.day01;
 
-// ÇÑÁÙ ÁÖ¼®Ã³¸®
-/* ¿©·¯ÁÙ     »ó¼öÁ¾·á
-   ÁÖ¼®      1. Á¤¼öÇü Á¤¼ö (1, 2, 3,...)
-   Ã³¸®      2. ½Ç¼öÇü Á¤¼ö (1.02, 2.38, 3.22, ...)
-            3. ¹®ÀÚ »ó¼ö ('a', 'b', 'c') : ´ë¹®ÀÚ, ¼Ò¹®ÀÚ, ¼ıÀÚ¹®ÀÚ, °ø¹é¹®ÀÚ -> (¿£ÅÍ : '\n', ÅÇ : '\t')
-            4. ¹®ÀÚ¿­ »ó¼ö ("banana", "car", "apple")
-            5. ³í¸®Çü »ó¼ö (true, false)
+// í•œì¤„ ì£¼ì„ì²˜ë¦¬
+/* ì—¬ëŸ¬ì¤„     ìƒìˆ˜ì¢…ë£Œ
+   ì£¼ì„      1. ì •ìˆ˜í˜• ì •ìˆ˜ (1, 2, 3,...)
+   ì²˜ë¦¬      2. ì‹¤ìˆ˜í˜• ì •ìˆ˜ (1.02, 2.38, 3.22, ...)
+            3. ë¬¸ì ìƒìˆ˜ ('a', 'b', 'c') : ëŒ€ë¬¸ì, ì†Œë¬¸ì, ìˆ«ìë¬¸ì, ê³µë°±ë¬¸ì -> (ì—”í„° : '\n', íƒ­ : '\t')
+            4. ë¬¸ìì—´ ìƒìˆ˜ ("banana", "car", "apple")
+            5. ë…¼ë¦¬í˜• ìƒìˆ˜ (true, false)
 */
 /*
-      Ãâ·Â¸Ş¼Òµå
-      1. println() : °³Çà¹®ÀÚ Æ÷ÇÔO
-      2. print() : °³Çà¹®ÀÚ Æ÷ÇÔX
-      3. printf() : JDK1.5¹öÀü¿¡¼­ Ãß°¡µÈ ¸Ş¼Òµå, °³Çà¹®ÀÚ Æ÷ÇÔX, Ãâ·Â¹®ÀÚÇüÅÂ
-          Ãâ·Â¹®ÀÚ
-            %d: Á¤¼ö  %f: ½Ç¼ö  %c: ¹®ÀÚ %s: ¹®ÀÚ¿­ %b: ³í¸®°ª
+      ì¶œë ¥ë©”ì†Œë“œ
+      1. println() : ê°œí–‰ë¬¸ì í¬í•¨O
+      2. print() : ê°œí–‰ë¬¸ì í¬í•¨X
+      3. printf() : JDK1.5ë²„ì „ì—ì„œ ì¶”ê°€ëœ ë©”ì†Œë“œ, ê°œí–‰ë¬¸ì í¬í•¨X, ì¶œë ¥ë¬¸ìí˜•íƒœ
+          ì¶œë ¥ë¬¸ì
+            %d: ì •ìˆ˜  %f: ì‹¤ìˆ˜  %c: ë¬¸ì %s: ë¬¸ìì—´ %b: ë…¼ë¦¬ê°’
 */
 
 public class PrintMain {
@@ -24,15 +24,15 @@ public class PrintMain {
 		System.out.println('A');
 		System.out.println("apple");
 		System.out.println(true);
-		System.out.println(23 + "»ì");  // ¹®ÀÚ¿­ + Á¤¼ö => ¹®ÀÚ¿­
+		System.out.println(23 + "ì‚´");  // ë¬¸ìì—´ + ì •ìˆ˜ => ë¬¸ìì—´
 		System.out.print(23);
-		System.out.println('»ì');
-		System.out.println("23»ì");
+		System.out.println('ì‚´');
+		System.out.println("23ì‚´");
 		System.out.println("AB" + 4 + 12);
 		System.out.println(4 + 12 + "AB");
 		System.out.printf("%d\n", 23);
 		System.out.println();
-		System.out.printf("%d»ì + %d»ì = %d»ì", 23, 45, 23 + 45);
+		System.out.printf("%dì‚´ + %dì‚´ = %dì‚´", 23, 45, 23 + 45);
 		System.out.println('\n');
 		System.out.print('\t');
 		System.out.println("h");
@@ -43,7 +43,7 @@ public class PrintMain {
 		System.out.printf("[%-7d]\n", 13000);
 		System.out.printf("[%-7d]\n", 250);
 		System.out.printf("[%05d]\n", 250);
-		System.out.printf("[%5s]\n", "¾È³ç");
+		System.out.printf("[%5s]\n", "ì•ˆë…•");
 		System.out.printf("[%10.5f]\n", 112.36);
 		System.out.printf("%b\n", false);
 	}
