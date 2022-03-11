@@ -1,4 +1,4 @@
-package kr.ac.kopo.day03;
+package kr.ac.kopo.assignment01;
 import java.util.Random;
 
 //10번 과제
@@ -11,7 +11,7 @@ import java.util.Random;
  *  c > b > a
  */
 
-public class HomeworkMain01 {
+public class AssignmentAnswerMain01 {
 	public static void main(String[] args) {
 		Random r = new Random();
 		int num1 = r.nextInt(30) + 1;	// 1~30까지 난수 입력
