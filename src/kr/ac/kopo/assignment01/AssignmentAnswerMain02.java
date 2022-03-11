@@ -12,6 +12,10 @@ public class AssignmentAnswerMain02 {
 		
 		System.out.println(num1 + " : " + num2 + " : " + num3 + " : " + num4);
 		
+		// int max01 = num1 > num2 ? num1 : num2;
+		// int max02 = num3 > num4 ? num3 : num4;
+		// int max = max01 > max02 ? max01 : max02; 
+		
 		int max = num1 > num2 ? num1 : num2;
 		if (max < num3) {
 			max = num3;
