@@ -22,6 +22,10 @@ public class HomeworkMain01 {
 		
 		int max = num1;
 		int min = num2;
+		
+		// int max = num1 > num2 ? num1 : num2;
+		// int min = num1 > num2 ? num2 : num1;
+		
 		if (num1 < num2) {
 			max = num2;
 			min = num1;
