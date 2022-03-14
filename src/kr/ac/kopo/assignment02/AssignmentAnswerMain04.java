@@ -48,6 +48,7 @@ public class AssignmentAnswerMain04 {
 			}
 			System.out.println();
 		}
+		
 		/*
 		int star = 1;
 		for (int i = 1; i <= 9; i++) {
