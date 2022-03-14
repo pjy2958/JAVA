@@ -16,21 +16,12 @@ public class AssignmentMain05 {
 			System.out.print("Start Index(0 - 4) : ");
 			num = sc.nextInt();
 			if(ch == '+') {
-				for (int i = 0; i < nums.length; i++) {
-					if(i + num < 5)
-						System.out.print(nums[i + num] + " ");
-					else
-						System.out.print(nums[num + i - 5] + " ");
+				for (int i = 0; i < 5; i++) {
+					System.out.println();
 				}
 			} else {
-				for (int i = 0; i < nums.length; i++) {
-					if(i + num < 5)
-						System.out.print(nums[i + num] + " ");
-					else
-						System.out.print(nums[num + i - 5] + " ");
-				}
+				
 			}
-			
 		} else {
 			System.out.println("잘못 입력하였습니다.");
 		}
