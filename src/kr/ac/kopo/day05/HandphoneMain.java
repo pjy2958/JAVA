@@ -4,7 +4,6 @@ class Handphone{		// Main메소드 위에 클래스를 만들때는 public 사�
 	String name;		// 실사용자명
 	String phoneNumber;	// 핸드폰번호
 	String company;		// 제조사
-	
 }
 
 public class HandphoneMain {
