@@ -17,6 +17,5 @@ public class MethodMain04 {
 		int finishDan = gu.getDan();
 		
 		System.out.println(startDan + finishDan);
-		
 	}
 }
