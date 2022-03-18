@@ -3,7 +3,6 @@ package kr.ac.kopo.day06;
 import java.util.Scanner;
 
 public class Gugudan {
-	
 	int getDan() {
 		Scanner sc = new Scanner(System.in);
 		int dan = Integer.parseInt(sc.nextLine());
