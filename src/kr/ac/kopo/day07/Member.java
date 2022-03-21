@@ -6,12 +6,13 @@ public class Member {
 	String bloodType;
 	
 	Member() {
-		this.name = "신원미상";
-		this.age = -1;
-		this.bloodType = "알수없음";
+		this("알수없음");				// 이와같은 상황은 메소드를 실행하면 다른메소드를 실행해서 성능하향.
+//		this.name = "신원미상";
+//		this.age = -1;
+//		this.bloodType = "알수없음";
 	}
 	Member(String name) {
-		this(name, -1, "알수없음");
+		this(name, -1);
 //		this.name = name;
 //		this.age = -1;
 //		this.bloodType = "알수없음";
