@@ -1,4 +1,4 @@
-package kr.ac.kopo.day09.abs02.copy;
+package kr.ac.kopo.day09.abs02;
 
 public class HPPrinter extends Printer {
 	public void hpPrint() {

@@ -1,4 +1,4 @@
-package kr.ac.kopo.day09.abs02.copy;
+package kr.ac.kopo.day09.abs02;
 
 /*
  * 프린터를 선택하세요(1.LG  2.SAMSUNG) => 1 
