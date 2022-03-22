@@ -39,5 +39,4 @@ public class Menu {
 	public void printError() {
 		System.out.println("번호를 잘못 입력했습니다.");
 	}
-	
 }
