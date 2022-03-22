@@ -10,8 +10,8 @@ public class Menu {
 		print(type);
 	}
 	
-	public void print (int type) {
-		Printer p = null;
+	private void print (int type) {		// 외부적으로 드러나지않는 기능들은 private 설정
+		Printer p = null;				// 객체의 형변환
 		switch(type) {
 		case 1:
 			p = new LGPrinter();
@@ -30,13 +30,13 @@ public class Menu {
 		}
 	}
 	
-	public int select() {
+	private int select() {
 		System.out.print("프린터를 선택하세요(1.LG  2.SAMSUNG  3.HP) : ");
 		int type = Integer.parseInt(sc.nextLine());
 		return type;
 	}
 	
-	public void printError() {
+	private void printError() {
 		System.out.println("번호를 잘못 입력했습니다.");
 	}
 }
