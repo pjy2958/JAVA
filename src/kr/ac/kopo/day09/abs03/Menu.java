@@ -11,7 +11,7 @@ public class Menu {
 	}
 	
 	private void print (int type) {		// 외부적으로 드러나지않는 기능들은 private 설정
-		Printer p = null;				// 객체의 형변환
+		Printer p = null;				// 객체의 형변환 : 묵시적 형변환
 		switch(type) {
 		case 1:
 			p = new LGPrinter();
