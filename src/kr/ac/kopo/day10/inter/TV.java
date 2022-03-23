@@ -1,4 +1,4 @@
-package kc.ac.kopo.day10.inter;
+package kr.ac.kopo.day10.inter;
 
 // 인터페이스 특징
 // 모든메소드 -> 추상메소드

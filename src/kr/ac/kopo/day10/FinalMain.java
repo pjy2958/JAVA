@@ -1,4 +1,4 @@
-package kc.ac.kopo.day10;
+package kr.ac.kopo.day10;
 
 import java.util.Random;
 

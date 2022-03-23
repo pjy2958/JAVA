@@ -1,4 +1,4 @@
-package kc.ac.kopo.day10.inter;
+package kr.ac.kopo.day10.inter;
 
 public class LGTV implements TV{
 	
