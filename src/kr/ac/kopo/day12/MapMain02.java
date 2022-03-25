@@ -50,7 +50,8 @@ class Member {
 		Member other = (Member) obj;
 		return Objects.equals(name, other.name) && Objects.equals(phone, other.phone);
 	}
-	
+}
+
 //	@Override
 //	public boolean equals(Object obj) {					// Object가 상위클래스이기때문에 member변수에 접근을 할수가 없다.
 //		if (obj == null) {								// => equals의 용도는 같은 클래스의 멤버변수들을 비교하는것이기 때문에 매개변수로 동일 클래스가 들어온다.
@@ -69,7 +70,6 @@ class Member {
 //
 //		return true;
 //	}
-}
 
 class Car {
 	private String name;
