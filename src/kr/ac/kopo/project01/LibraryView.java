@@ -5,12 +5,11 @@ import java.util.Scanner;
 public class LibraryView {
 	
 	private Scanner sc;		// 스캐너
-	private Library library;	// 도서관
+	private LibraryUtil libraryUtil;
 	
 	public LibraryView() {
-		super();
 		this.sc = new Scanner(System.in);
-		this.library = new Library();
+		this.libraryUtil = new LibraryUtil();
 	}
 
 	// 도서관 메인 화면
@@ -18,7 +17,7 @@ public class LibraryView {
 		
 		while(true) {
 			System.out.println("<----------------도서관 이용 메뉴---------------->");
-			System.out.println("1.대여\t2.반납\t3.회원관리\t4.\t도서관리\t5.종료");
+			System.out.println("1.대여\t2.반납\t3.회원관리\t4.도서관리\t5.종료");
 			System.out.print("원하시는 기능을 선택하세요 : ");
 			int num = Integer.parseInt(sc.nextLine());
 			
@@ -58,6 +57,7 @@ public class LibraryView {
 	
 	// 도서관리 화면
 	private void bookManagementView() {
-		
+		// 로그인
+		// 
 	}
 }
