@@ -2,7 +2,7 @@ package kr.ac.kopo.project01;
 
 public class Member {
 	private String id;			// 아이디(필수)
-	private int passward;		// 패스워드(필수)
+	private String passward;		// 패스워드(필수)
 	private String name;		// 회원이름(필수)
 	private int phoneNumber;	// 전화번호(선택)
 	private int memberNumber;	// 회원번호(필수)
@@ -10,18 +10,26 @@ public class Member {
 	public Member() {
 	}
 	
-	public Member(String id, int passward, String name, int memberNumber) {
+	public Member(String id, String passward, String name, int memberNumber) {
 		this(id, passward, name, 00000000000, memberNumber);
 	}
 
-
-	public Member(String id, int passward, String name, int phoneNumber, int memberNumber) {
+	public Member(String id, String passward, String name, int phoneNumber, int memberNumber) {
 		this.id = id;
 		this.passward = passward;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
 		this.memberNumber = memberNumber;
 	}
+
+	public int getMemberNumber() {
+		return memberNumber;
+	}
+
+	public void setMemberNumber(int memberNumber) {
+		this.memberNumber = memberNumber;
+	}
+
 
 	public String getId() {
 		return id;
@@ -32,11 +40,11 @@ public class Member {
 	}
 
 
-	public int getPassward() {
+	public String getPassward() {
 		return passward;
 	}
 
-	public void setPassward(int passward) {
+	public void setPassward(String passward) {
 		this.passward = passward;
 	}
 	
