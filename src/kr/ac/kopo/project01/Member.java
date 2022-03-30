@@ -53,4 +53,4 @@ public class Member {
 		return "Member [id=" + id + ", passward=" + passward + ", name=" + name + ", phoneNumber=" + phoneNumber
 				+ ", memberNumber=" + memberNumber + "]";
 	}
-}
+} 
