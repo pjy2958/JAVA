@@ -42,7 +42,7 @@ public class LibraryUtil {
 		} else {
 			System.out.println("잘못 입력하셨습니다.");
 			System.out.println("메인 메뉴로 돌아갑니다.");
-		}
+		} 
 		return false;
 	}
 	
