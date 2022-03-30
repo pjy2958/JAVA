@@ -30,13 +30,32 @@ public class LibraryView {
 				break;
 			case 3:
 				memberManagementView();
+				libraryUtil.login();
 				break;
 			case 4:
 				bookManagementView();
+				libraryUtil.login();
 				break;
 			case 5:
 				System.exit(0);
 			}
+		}
+	}
+	
+	private void loginView() {
+		System.out.println("로그인을 해야 이용할 수 있습니다.");
+		System.out.println("1.로그인\t2.회원가입\t3.돌아가기");
+		System.out.print("원하시는 기능을 선택하세요 : ");
+		int num = Integer.parseInt(this.sc.nextLine());
+		switch(num) {
+		case 1:
+			this.libraryUtil.login();
+			break;
+		case 2:
+			this.libraryUtil.registration();
+			break;
+		case 3:
+			return;
 		}
 	}
 	
