@@ -2,10 +2,11 @@ package kr.ac.kopo.project01;
 
 public class Member {
 	private String id;			// 아이디(필수)
-	private String passward;		// 패스워드(필수)
+	private String passward;	// 패스워드(필수)
 	private String name;		// 회원이름(필수)
 	private int phoneNumber;	// 전화번호(선택)
-	private int memberNumber;	// 회원번호(필수)
+	private String grade;		// 회원등급(자동)
+	private int memberNumber;	// 회원번호(자동)
 	
 	public Member() {
 	}
@@ -19,6 +20,7 @@ public class Member {
 		this.passward = passward;
 		this.name = name;
 		this.phoneNumber = phoneNumber;
+		this.grade = "일반회원";
 		this.memberNumber = memberNumber;
 	}
 
@@ -54,6 +56,14 @@ public class Member {
 	
 	public void setName(String name) {
 		this.name = name;
+	}
+	
+	public String getGrade() {
+		return this.grade;
+	}
+	
+	public void setGrade(String grade) {
+		this.grade = grade;
 	}
 	
 	@Override

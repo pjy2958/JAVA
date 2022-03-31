@@ -11,5 +11,14 @@ public class LibraryManagement {
 	public LibraryManagement() {
 		this.memberList = new ArrayList();
 		this.bookList = new ArrayList();
+		this.manager();
+	}
+	
+	// 관리자를 회원리스트 0번으로 설정
+	private void manager() {
+		Member manager = new Member("root", "0000", "박준영", 0);	// 관리자
+		manager.setGrade("관리자");
+		this.memberList.add(manager);
+		
 	}
 } 

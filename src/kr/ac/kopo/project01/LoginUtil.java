@@ -4,11 +4,12 @@ import java.util.Scanner;
 
 public class LoginUtil {
 	private Scanner sc;
-	private int indexNum;	// 회원가입 시 저장할 리스트의 인덱스번호
-
+	private int indexNum;	// 회원가입 시 저장할 리스트의 인덱스번호 -> 관리자가 0번이므로 1로 초기화
+	
+	// 생성자
 	public LoginUtil() {
 		this.sc = new Scanner(System.in);
-		this.indexNum = 0;
+		this.indexNum = 1;
 	}
 	
 	// 로그인 기능
@@ -70,14 +71,14 @@ public class LoginUtil {
 		String phoneNumber = sc.nextLine();
 		// 전화번호를 입력한 경우
 		if(phoneNumber == "") {
-			Member newMember = new Member(id, passward, name, this.indexNum + 1);
+			Member newMember = new Member(id, passward, name, this.indexNum);
 			LibraryManagement.memberList.add(newMember);
 			LibraryManagement.loginMember = newMember;
 			System.out.println("** " + newMember.getName() + "님 환영합니다!! **");
 			return true;
 		}
 		// 전화번호를 입력하지 않은 경우
-		Member newMember = new Member(id, passward, name, Integer.valueOf(phoneNumber),this.indexNum + 1);
+		Member newMember = new Member(id, passward, name, Integer.valueOf(phoneNumber),this.indexNum);
 		LibraryManagement.memberList.add(newMember);
 		LibraryManagement.loginMember = newMember;
 		System.out.println("** " + newMember.getName() + "님 환영합니다!! **");
@@ -86,12 +87,6 @@ public class LoginUtil {
 	
 	// id가 존재하는가? -> 회원가입시 사용
 	public boolean existId(String id) {
-		// 리스트에 객체가 하나도 없을 경우
-		if(this.indexNum == 0) {
-			this.indexNum++;
-			return false;
-		}
-		
 		// 회원리스트에서 동일 아이디가 있는 경우
 		for(int i = 0; i < LibraryManagement.memberList.size(); i++) {	// 회원리스트 크기만큼 반복
 			if(LibraryManagement.memberList.get(i).getId().equals(id)) {
@@ -125,6 +120,6 @@ public class LoginUtil {
 	
 	// 현재 로그인한 회원의 이름 출력
 	public void printLoginInfo() {
-		System.out.println("[" + LibraryManagement.loginMember.getName() + "님 접속중] 로그아웃을 하시려면 6번을 입력하세요. **");
+		System.out.println("[" + LibraryManagement.loginMember.getGrade() + ")" + LibraryManagement.loginMember.getName() + "님 접속중] 로그아웃을 하시려면 6번을 입력하세요. **");
 	}
 } 
