@@ -7,6 +7,8 @@ public class LibraryView {
 	private Scanner sc;		// 스캐너
 	private boolean loginCheck;	// 로그인되어있는지 체크하는 변수
 	private LibraryManagement libraryManagement;
+	private BookManagement bookManagement;
+	private BookBorrowUtil bookBorrowUtil;
 	private BookManagementUtil bookManagementUtil;
 	private LoginUtil loginUtil;
 	
@@ -14,6 +16,8 @@ public class LibraryView {
 		this.sc = new Scanner(System.in);
 		this.loginCheck = false;
 		this.libraryManagement = new LibraryManagement();
+		this.bookManagement = new BookManagement();
+		this.bookBorrowUtil = new BookBorrowUtil();
 		this.bookManagementUtil = new BookManagementUtil();
 		this.loginUtil = new LoginUtil();
 	}
@@ -31,7 +35,7 @@ public class LibraryView {
 			
 			switch(num) {
 			case 1:
-				loanView();
+				borrowBookView();
 				break;
 			case 2:
 				returnBookView();
@@ -73,8 +77,25 @@ public class LibraryView {
 	}
 	
 	// 책 대여 화면
-	private void loanView() {
-		
+	private void borrowBookView() {
+		while (true) {
+			System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<도서대출 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			System.out.println("| 1.책검색 2.책대출 3.돌아가기|");
+			System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			System.out.print("* 기능을 선택하세요 : ");
+			int num = Integer.parseInt(this.sc.nextLine());
+			switch (num) {
+				case 1:
+					this.bookManagementUtil.bookRegister();
+					break;
+				case 2:
+					this.bookManagementUtil.printBookList();
+					this.bookManagementUtil.bookRemove();
+					break;
+				case 3:
+					return;
+			}
+		}
 	}
 	
 	// 책 반납 화면
