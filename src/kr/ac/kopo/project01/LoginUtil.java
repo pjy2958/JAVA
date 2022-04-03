@@ -15,6 +15,7 @@ public class LoginUtil {
 	// 로그인 기능
 	public boolean login() {
 		// 회원의 id, passward가 존재하는지 확인
+		System.out.println("\n <로그인 기능>");
 		System.out.print("* 회원 id : ");
 		String id = sc.nextLine();
 		System.out.print("* 회원 passward : ");
@@ -36,7 +37,7 @@ public class LoginUtil {
 	
 	// 회원가입 기능
 	public boolean registration() {
-		System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<회원 가입>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+		System.out.println("\n <회원가입 기능>");
 		System.out.print("* (필수항목) id 입력 : ");
 		String id = sc.nextLine();
 		

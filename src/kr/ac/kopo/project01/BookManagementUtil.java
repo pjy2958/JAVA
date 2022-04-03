@@ -1,7 +1,7 @@
 package kr.ac.kopo.project01;
 
-import java.util.Scanner;
 import java.util.Objects;
+import java.util.Scanner;
 
 public class BookManagementUtil {
 	
@@ -15,12 +15,12 @@ public class BookManagementUtil {
 
 	// 책등록 기능
 	public void bookRegister() {
-		System.out.println("\n----------<책등록>----------");
+		System.out.println("\n <도서등록 기능>");
 		System.out.print("* 제목 : ");
 		String bookName = sc.nextLine();
 		System.out.print("* 저자 : ");
 		String bookWriter = sc.nextLine();
-		System.out.print("* 출판사  : ");
+		System.out.print("* 출판사 : ");
 		String publisher = sc.nextLine();
 		
 		this.searchPivot();
@@ -33,12 +33,18 @@ public class BookManagementUtil {
 	
 	// 책 삭제 기능
 	public void bookRemove() {
-		this.printBookList();
-		System.out.println("책삭제기능-------------");
-		System.out.println("삭제할 책 번호를 입력하세요(취소 0) : ");
+		System.out.println("\n <도서삭제 기능>");
+		System.out.print("삭제할 책 번호를 입력하세요(취소 0) : ");
 		int bookNumber = Integer.parseInt(sc.nextLine());
+		
 		if(bookNumber == 0)
 			return;
+		BookBorrowUtil bookBorrowUtil = new BookBorrowUtil();
+		if(bookBorrowUtil.isBookBorrow(bookNumber)) {	// 책이 대출중인지 확인
+			System.out.println("** 대출중인 도서입니다.");
+			return;
+		}
+		
 		BookManagement.bookList.set(bookNumber - 1, null);
 	}
 	
@@ -55,17 +61,16 @@ public class BookManagementUtil {
 	
 	// 전체도서출력 기능
 	public void printBookList() {
-		System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-		System.out.println("| 번호 |\t제목\t\t|\t저자\t| 출판사 |");
-		System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+		System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+		System.out.println("| 번호 | 제목 \t       | 저자 \t  | 출판사 \t|");
+		System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 		for(int i = 0; i < BookManagement.bookList.size(); i++) {
 			Book newBook = BookManagement.bookList.get(i);
 			if(newBook == null) {
-				System.out.printf("  %03d  삭제됌----------------------------\n", i + 1);
+				System.out.printf("");
 			} else {
-				System.out.printf("  %03d  %-10s%-5s%-10s\n", i + 1, newBook.getBookName(), newBook.getBookWriter(), newBook.getPublisher());
+				System.out.printf("   %03d  %-15s%-10s%-10s\n", newBook.getBookNumber(), newBook.getBookName(), newBook.getBookWriter(), newBook.getPublisher());
 			}
 		}
 	}
-
 }
