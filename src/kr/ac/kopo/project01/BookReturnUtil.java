@@ -14,7 +14,7 @@ public class BookReturnUtil {
 	public void bookReturn() {
 		System.out.println(" <도서반납 기능>");
 		if(!BookManagement.bookBorrowMap.containsKey(LibraryManagement.loginMember.getMemberNumber())) {	// 책을 대출하지 않은 경우
-			System.out.println("** 대출한 책이 없습니다.");
+			print.returnBook();
 			return;
 		}
 		this.printBorrowBook();
@@ -53,9 +53,7 @@ public class BookReturnUtil {
 	// 현재 빌린책목록 출력
 	public void printBorrowBook() {
 		System.out.println(" " + LibraryManagement.loginMember.getName() + "님이 대출한 도서 목록");
-		System.out.println("ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-		System.out.println("| 번호 | 제목 \t       | 저자 \t  | 출판사 \t|");
-		System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+		print.bookInfo();
 		for(int i = 0; i < BookManagement.bookBorrowMap.get(LibraryManagement.loginMember.getMemberNumber()).length; i+=2) {
 			int bookNum = BookManagement.bookBorrowMap.get(LibraryManagement.loginMember.getMemberNumber())[i];
 			if (BookManagement.bookBorrowMap.get(LibraryManagement.loginMember.getMemberNumber())[i] == 0)

@@ -12,17 +12,17 @@ public class BookBorrowUtil {
     
     // 책 대출 기능
     public void bookBorrow() {
-    	System.out.println("\n <책대출 기능>");
-    	System.out.println("** 책은 최대 5권까지 대출이 가능합니다.");
-        System.out.print("* 대출할 책 번호를 입력하세요 : ");
+    	print.borrowBook();
+    	print.borrowBookMax();
+        print.inputBorrowBookNum();
         int bookNum = Integer.parseInt(sc.nextLine());
         if(isBookBorrow(bookNum)){
-            System.out.println("** 대출중인 책입니다.");
+            print.borrowBookExist();
             return;
         }
         int pivot = bookPivot();	// Map의 value의 리스트에 책의 정보넣을 자리
         if(pivot == 10) {
-            System.out.println("** 책을 더이상 대출할 수 없습니다.");
+            print.borrowBookEnable();
             return;
         }
         if(pivot == 0) {

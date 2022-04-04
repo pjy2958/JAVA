@@ -27,12 +27,10 @@ public class LibraryView {
 	// 도서관 메인 화면
 	public void mainMenu() {
 		while(true) {
-			System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<도서관 메인 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.println("| 1.대여하기 | 2.반납하기 | 3.도서관리 | 4.회원관리 | 5.종료 |");
-			System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
+			print.mainMenu();
 			if (loginCheck == true)
 				this.loginUtil.printLoginInfo();
-			System.out.print("* 기능을 선택하세요 : ");
+			print.selectFunction();
 			int num = Integer.parseInt(sc.nextLine());
 			
 			switch(num) {
@@ -54,7 +52,7 @@ public class LibraryView {
 				this.loginCheck = loginUtil.logout();
 				break;
 			default :
-				System.out.println("** 잘못입력하였습니다.");
+				print.errorInput();
 			}
 		}
 	}
@@ -62,10 +60,8 @@ public class LibraryView {
 	// 책 대여 화면
 	private void borrowBookView() {
 		while (true) {
-			System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<도서대출 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.println("| 1.책검색        | 2.책대출        | 3.돌아가기         |");
-			System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.print("* 기능을 선택하세요 : ");
+			print.borrowBookMenu();
+			print.selectFunction();
 			int num = Integer.parseInt(this.sc.nextLine());
 			switch (num) {
 				case 1:
@@ -90,18 +86,16 @@ public class LibraryView {
 	
 	// 도서관리 화면
 	private void bookManagementView() {
-		System.out.println("** 관리자만 접근 가능한 기능입니다.");
+		print.accessAdmin();
 		if(!this.loginCheckView())
 			return;
 		if(!LibraryManagement.loginMember.getGrade().equals("관리자")) {
-			System.out.println("\n** 접근권한없음) 관리자가 아닙니다.");
+			print.notAdmin();
 			return;
 		}
 		while (true) {
-			System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<도서관리 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.println("| 1.책등록        | 2.책삭제        | 3.돌아가기         |");
-			System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.print("* 기능을 선택하세요 : ");
+			print.bookManagementMenu();
+			print.selectFunction();
 			int num = Integer.parseInt(this.sc.nextLine());
 			switch (num) {
 			case 1:
@@ -122,10 +116,8 @@ public class LibraryView {
 		if(!this.loginCheckView())
 			return;
 		while (true) {
-			System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<회원관리 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.println("| 1.회원정보변경       | 2.회원탈퇴      | 3.메인메뉴      |");
-			System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-			System.out.print("* 기능을 선택하세요 : ");
+			print.memberManagementMenu();
+			print.selectFunction();
 			int num = Integer.parseInt(this.sc.nextLine());
 			switch (num) {
 			case 1:
@@ -140,10 +132,8 @@ public class LibraryView {
 
 	// 로그인 화면
 	private void loginView() {
-		System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<로그인 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-		System.out.println("| 1.로그인        | 2.회원가입       | 3.돌아가기        |");
-		System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-		System.out.print("* 기능을 선택하세요 : ");
+		print.loginMenu();
+		print.selectFunction();
 		int num = Integer.parseInt(this.sc.nextLine());
 		switch (num) {
 		case 1:
@@ -160,7 +150,7 @@ public class LibraryView {
 	// 로그인이 되었는지 확인하는 뷰
 	private boolean loginCheckView() {
 		if (!this.loginCheck) { // 로그인이 안되어 있을 경우
-			System.out.print("\n* 로그인이 필요한 기능입니다. 로그인하시겠습니까?(Y/N) : ");
+			print.accessLogin();
 			char ch = sc.nextLine().charAt(0);
 
 			if (ch == 'Y' || ch == 'y') {
@@ -168,7 +158,7 @@ public class LibraryView {
 			} else if (ch == 'N' || ch == 'n') {
 				return false;
 			} else {
-				System.out.println("** 잘못 입력하였습니다.");
+				print.errorInput();
 				return false;
 			}
 		}
