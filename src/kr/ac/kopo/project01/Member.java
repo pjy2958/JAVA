@@ -9,6 +9,7 @@ public class Member {
 	private int memberNumber;	// 회원번호(자동)
 	
 	public Member() {
+		this(null, null, null, 00000000000, -1);
 	}
 	
 	public Member(String id, String passward, String name, int memberNumber) {
@@ -66,6 +67,14 @@ public class Member {
 		this.grade = grade;
 	}
 	
+	public int getPhoneNumber() {
+		return phoneNumber;
+	}
+
+	public void setPhoneNumber(int phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+
 	@Override
 	public String toString() {
 		return "Member [id=" + id + ", passward=" + passward + ", name=" + name + ", phoneNumber=" + phoneNumber

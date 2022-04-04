@@ -11,6 +11,7 @@ public class LibraryView {
 	private BookBorrowUtil bookBorrowUtil;
 	private BookReturnUtil bookReturnUtil;
 	private BookManagementUtil bookManagementUtil;
+	private MemberManagementUtil memberManagementUtil;
 	private LoginUtil loginUtil;
 	
 	public LibraryView() {
@@ -21,6 +22,7 @@ public class LibraryView {
 		this.bookBorrowUtil = new BookBorrowUtil();
 		this.bookReturnUtil = new BookReturnUtil();
 		this.bookManagementUtil = new BookManagementUtil();
+		this.memberManagementUtil = new MemberManagementUtil();
 		this.loginUtil = new LoginUtil();
 	}
 
@@ -29,7 +31,7 @@ public class LibraryView {
 		while(true) {
 			print.mainMenu();
 			if (loginCheck == true)
-				this.loginUtil.printLoginInfo();
+				this.loginUtil.printLogoutInfo();
 			print.selectFunction();
 			int num = Integer.parseInt(sc.nextLine());
 			
@@ -52,7 +54,7 @@ public class LibraryView {
 				this.loginCheck = loginUtil.logout();
 				break;
 			default :
-				print.errorInput();
+				print.inputError();
 			}
 		}
 	}
@@ -61,16 +63,21 @@ public class LibraryView {
 	private void borrowBookView() {
 		while (true) {
 			print.borrowBookMenu();
+			if(loginCheck == true)
+				loginUtil.printLoginInfo();
 			print.selectFunction();
 			int num = Integer.parseInt(this.sc.nextLine());
 			switch (num) {
 				case 1:
-					this.bookManagementUtil.printBookList();
-					this.bookBorrowUtil.bookBorrow();
+					bookManagementUtil.printBookList();
+					this.bookBorrowUtil.searchBook();
 					break;
 				case 2:
-					this.bookManagementUtil.printBookList();
-					this.bookBorrowUtil.bookBorrow();
+					if(!loginCheckView()) {
+						break;
+					}
+					bookManagementUtil.printBookList();
+					bookBorrowUtil.borrowBook();
 					break;
 				case 3:
 					return;
@@ -80,30 +87,35 @@ public class LibraryView {
 	
 	// 책 반납 화면
 	private void returnBookView() {
-		this.bookReturnUtil.bookReturn();
+		if(!loginCheckView()) {
+			return;
+		}
+		bookReturnUtil.bookReturn();
 	}
 	
 	
 	// 도서관리 화면
 	private void bookManagementView() {
-		print.accessAdmin();
-		if(!this.loginCheckView())
+		if(!loginCheckView()) {
+			print.adminAccessError();
 			return;
-		if(!LibraryManagement.loginMember.getGrade().equals("관리자")) {
-			print.notAdmin();
+		}
+		if(!LibraryManagement.getLoginMember().getGrade().equals("관리자")) {
+			print.adminAuthorityError();
 			return;
 		}
 		while (true) {
 			print.bookManagementMenu();
+			loginUtil.printLoginInfo();
 			print.selectFunction();
 			int num = Integer.parseInt(this.sc.nextLine());
 			switch (num) {
 			case 1:
-				this.bookManagementUtil.bookRegister();
+				bookManagementUtil.bookRegister();
 				break;
 			case 2:
-				this.bookManagementUtil.printBookList();
-				this.bookManagementUtil.bookRemove();
+				bookManagementUtil.printBookList();
+				bookManagementUtil.bookRemove();
 				break;
 			case 3:
 				return;
@@ -113,17 +125,21 @@ public class LibraryView {
 	
 	// 회원관리 화면
 	private void memberManagementView() {
-		if(!this.loginCheckView())
+		if(!loginCheckView())
 			return;
 		while (true) {
 			print.memberManagementMenu();
+			loginUtil.printLoginInfo();
 			print.selectFunction();
-			int num = Integer.parseInt(this.sc.nextLine());
+			int num = Integer.parseInt(sc.nextLine());
 			switch (num) {
 			case 1:
+				memberManagementUtil.changeMemberInfo();
 				break;
 			case 2:
-				break;
+				memberManagementUtil.withdrawMember();
+				loginCheck = false;
+				return;
 			case 3:
 				return;
 			}
@@ -134,13 +150,13 @@ public class LibraryView {
 	private void loginView() {
 		print.loginMenu();
 		print.selectFunction();
-		int num = Integer.parseInt(this.sc.nextLine());
+		int num = Integer.parseInt(sc.nextLine());
 		switch (num) {
 		case 1:
-			this.loginCheck = this.loginUtil.login();
+			this.loginCheck = loginUtil.login();
 			break;
 		case 2:
-			this.loginCheck = this.loginUtil.registration();
+			this.loginCheck = loginUtil.registration();
 			break;
 		case 3:
 			return;
@@ -149,20 +165,20 @@ public class LibraryView {
 	
 	// 로그인이 되었는지 확인하는 뷰
 	private boolean loginCheckView() {
-		if (!this.loginCheck) { // 로그인이 안되어 있을 경우
+		if (!loginCheck) { // 로그인이 안되어 있을 경우
 			print.accessLogin();
 			char ch = sc.nextLine().charAt(0);
 
 			if (ch == 'Y' || ch == 'y') {
-				this.loginView();
+				loginView();
 			} else if (ch == 'N' || ch == 'n') {
 				return false;
 			} else {
-				print.errorInput();
+				print.inputError();
 				return false;
 			}
 		}
-		if (!this.loginCheck)
+		if (!loginCheck)
 			return false;
 		return true;
 	}
