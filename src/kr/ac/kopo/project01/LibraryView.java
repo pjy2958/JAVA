@@ -28,14 +28,14 @@ public class LibraryView {
 
 	// 도서관 메인 화면
 	public void mainMenu() {
-		while(true) {
+		while (true) {
 			print.mainMenu();
 			if (loginCheck == true)
 				this.loginUtil.printLogoutInfo();
 			print.selectFunction();
 			int num = Integer.parseInt(sc.nextLine());
-			
-			switch(num) {
+
+			switch (num) {
 			case 1:
 				borrowBookView();
 				break;
@@ -53,7 +53,7 @@ public class LibraryView {
 			case 6:
 				this.loginCheck = loginUtil.logout();
 				break;
-			default :
+			default:
 				print.inputError();
 			}
 		}
