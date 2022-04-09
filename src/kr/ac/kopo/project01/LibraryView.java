@@ -128,10 +128,20 @@ public class LibraryView {
 				bookManagementUtil.bookRegister();
 				break;
 			case 2:
-				bookManagementUtil.printBookList();
-				bookManagementUtil.bookRemove();
+				if (bookManagement.getBookList().size() != 0) {
+					bookManagementUtil.printBookList();
+					bookManagementUtil.bookRemove();
+					break;
+				}
 				break;
 			case 3:
+				if (bookManagement.getBookList().size() != 0) {
+					bookManagementUtil.printBookList();
+					break;
+				}
+				print.nonexistBook();
+				break;
+			case 4:
 				return;
 			}
 		}
