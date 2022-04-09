@@ -147,6 +147,7 @@ public class LoginUtil {
 				}
 			}
 		}
+		print.nonexistMemberId();
 		return false;
 	}
 	

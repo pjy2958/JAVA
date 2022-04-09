@@ -43,6 +43,7 @@ public class print {
 	public static void login() {System.out.println("\n <로그인 기능>");}
 	public static void doneLogout() {System.out.println("** 로그아웃하였습니다.");}
 	public static void existMemberId() {System.out.println("** 이미 존재하는 id입니다.");}
+	public static void nonexistBook(){System.out.println("** 도서관에 책이 없습니다.");}
 	public static void nonexistReturnBook() {System.out.println("** 대출한 책이 없습니다.");}
 	public static void nonexistMemberId() {System.out.println("** 입력하신 id가 존재하지 않습니다.");}
 	public static void borrowBookMax() {System.out.println("** 책은 최대 5권까지 대출이 가능합니다.");}
