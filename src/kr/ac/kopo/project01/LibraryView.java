@@ -69,17 +69,31 @@ public class LibraryView {
 			int num = Integer.parseInt(this.sc.nextLine());
 			switch (num) {
 				case 1:
-					bookManagementUtil.printBookList();
-					this.bookBorrowUtil.searchBook();
+					if (bookManagement.getBookList().size() != 0) {
+						bookManagementUtil.printBookList();
+						this.bookBorrowUtil.searchBook();
+						break;
+					}
+					print.nonexistBook();
 					break;
 				case 2:
 					if(!loginCheckView()) {
 						break;
 					}
-					bookManagementUtil.printBookList();
-					bookBorrowUtil.borrowBook();
+					if(bookManagement.getBookList().size() != 0) {
+						bookManagementUtil.printBookList();
+						bookBorrowUtil.borrowBook();
+					}
+					print.nonexistBook();
 					break;
 				case 3:
+					if (bookManagement.getBookList().size() != 0) {
+						bookManagementUtil.printBookList();
+						break;
+					}
+					print.nonexistBook();
+					break;
+				case 4:
 					return;
 			}
 		}
@@ -114,10 +128,20 @@ public class LibraryView {
 				bookManagementUtil.bookRegister();
 				break;
 			case 2:
-				bookManagementUtil.printBookList();
-				bookManagementUtil.bookRemove();
+				if (bookManagement.getBookList().size() != 0) {
+					bookManagementUtil.printBookList();
+					bookManagementUtil.bookRemove();
+					break;
+				}
 				break;
 			case 3:
+				if (bookManagement.getBookList().size() != 0) {
+					bookManagementUtil.printBookList();
+					break;
+				}
+				print.nonexistBook();
+				break;
+			case 4:
 				return;
 			}
 		}

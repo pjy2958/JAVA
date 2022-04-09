@@ -147,13 +147,14 @@ public class LoginUtil {
 				}
 			}
 		}
+		print.nonexistMemberId();
 		return false;
 	}
 	
 	// 로그인 정보 출력
-		public void printLoginInfo() {
-			System.out.println("[" + loginMember.getGrade() + ")" + loginMember.getName() + "님 접속중]");
-		}
+	public void printLoginInfo() {
+		System.out.println("[" + loginMember.getGrade() + ")" + loginMember.getName() + "님 접속중]");
+	}
 		
 	// 로그아웃 기능 정보 출력
 	public void printLogoutInfo() {

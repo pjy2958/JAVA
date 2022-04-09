@@ -11,7 +11,7 @@ public class BookManagementUtil {
 	private Scanner sc;
 	private List<Book> bookList;
 	private int pivotIndex;	// 책등록시 위치를 알려주는 변수
-	
+
 	public BookManagementUtil() {
 		this.sc = new Scanner(System.in);
 		this.bookList = BookManagement.getBookList();
@@ -27,7 +27,7 @@ public class BookManagementUtil {
 		String bookWriter = sc.nextLine();
 		print.inputBookPublisher();
 		String publisher = sc.nextLine();
-		
+
 		searchPivot();
 		Book newBook = new Book(bookName, bookWriter, publisher, pivotIndex + 1);
 		if (pivotIndex < bookList.size()) {
@@ -35,13 +35,13 @@ public class BookManagementUtil {
 		} else
 			bookList.add(newBook);
 	}
-	
+
 	// 책 삭제 기능
 	public void bookRemove() {
 		print.removeBook();
 		print.inputRemoveBookNum();
 		int bookNumber = Integer.parseInt(sc.nextLine());
-		
+
 		if(bookNumber == 0)
 			return;
 		BookBorrowUtil bookBorrowUtil = new BookBorrowUtil();
@@ -49,10 +49,10 @@ public class BookManagementUtil {
 			print.borrowBookExist();
 			return;
 		}
-		
+
 		bookList.set(bookNumber - 1, null);
 	}
-	
+
 	// 리스트 내의 빈 공간을 찾는 기능
 	public void searchPivot() {
 		for(int i = 0; i < bookList.size(); i++) {
@@ -63,9 +63,13 @@ public class BookManagementUtil {
 		}
 		pivotIndex = bookList.size();
 	}
-	
+
 	// 전체도서출력 기능
 	public void printBookList() {
+		if (bookList.size() == 0){
+			print.nonexistBook();
+			return;
+		}
 		print.bookInfo();
 		for(int i = 0; i < bookList.size(); i++) {
 			Book book = bookList.get(i);

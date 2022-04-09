@@ -8,12 +8,12 @@ public class print {
 	}
 	public static void borrowBookMenu() {
 		System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<도서대출 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-		System.out.println("| 1.책검색        | 2.책대출        | 3.메인메뉴         |");
+		System.out.println("| 1.책검색    | 2.책대출   | 3.전체도서목록   | 4.메인메뉴  |");
 		System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 	}
 	public static void bookManagementMenu() {
 		System.out.println("\n ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ<도서관리 메뉴>ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
-		System.out.println("| 1.책등록        | 2.책삭제        | 3.메인메뉴         |");
+		System.out.println("| 1.책등록    | 2.책삭제   | 3.전체도서목록   | 4.메인메뉴  |");
 		System.out.println(" ㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡㅡ");
 	}
 	public static void memberManagementMenu() {
@@ -43,6 +43,7 @@ public class print {
 	public static void login() {System.out.println("\n <로그인 기능>");}
 	public static void doneLogout() {System.out.println("** 로그아웃하였습니다.");}
 	public static void existMemberId() {System.out.println("** 이미 존재하는 id입니다.");}
+	public static void nonexistBook(){System.out.println("** 도서관에 책이 없습니다.");}
 	public static void nonexistReturnBook() {System.out.println("** 대출한 책이 없습니다.");}
 	public static void nonexistMemberId() {System.out.println("** 입력하신 id가 존재하지 않습니다.");}
 	public static void borrowBookMax() {System.out.println("** 책은 최대 5권까지 대출이 가능합니다.");}
