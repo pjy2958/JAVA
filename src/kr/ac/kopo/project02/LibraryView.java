@@ -1,4 +1,4 @@
-package kr.ac.kopo.project01;
+package kr.ac.kopo.project02;
 
 import java.util.Scanner;
 

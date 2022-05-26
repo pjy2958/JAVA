@@ -1,4 +1,4 @@
-package kr.ac.kopo.project01;
+package kr.ac.kopo.project02;
 
 import java.util.List;
 import java.util.Objects;
@@ -11,11 +11,13 @@ public class BookManagementUtil {
 	private Scanner sc;
 	private List<Book> bookList;
 	private int pivotIndex;	// 책등록시 위치를 알려주는 변수
+	private FileIO file;
 
 	public BookManagementUtil() {
 		this.sc = new Scanner(System.in);
 		this.bookList = BookManagement.getBookList();
 		this.pivotIndex = this.bookList.size();
+		this.file = new FileIO();
 	}
 
 	// 책등록 기능
@@ -32,8 +34,10 @@ public class BookManagementUtil {
 		Book newBook = new Book(bookName, bookWriter, publisher, pivotIndex + 1);
 		if (pivotIndex < bookList.size()) {
 			bookList.set(pivotIndex, newBook);
-		} else
+		} else {
 			bookList.add(newBook);
+			file.fileWrite(newBook);
+		}
 	}
 
 	// 책 삭제 기능
